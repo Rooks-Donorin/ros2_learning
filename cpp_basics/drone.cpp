@@ -76,7 +76,12 @@ public:
 
 int main() {
     Drone my_drone("AERIS_01", 95.0);
+    Drone drone_two("AERIS_02", 18.0);
 
+    // Test the guard - this should fail
+    my_drone.fly_to(10,20);
+
+    //this should work
     my_drone.status();
     my_drone.arm();
     my_drone.takeoff(50.0);
@@ -85,6 +90,9 @@ int main() {
     my_drone.battery_check();
     my_drone.land();
     my_drone.status();
+
+    //Test critical battery
+    drone_two.battery_check();
 
     return 0;
 }
