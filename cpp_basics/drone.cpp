@@ -54,6 +54,10 @@ public:
     }
 
     void fly_to(float x, float y) {
+        if (!is_armed || altitude == 0.0) {
+            std::cout << "Cannot navigate - drone is not airborne!" << std::endl;
+            return;
+        }
         std::cout << "flying to coordinates: " << x << " , " << y << std::endl;
         x_cord = x;
         y_cord = y;
